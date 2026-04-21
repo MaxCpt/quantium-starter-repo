@@ -41,11 +41,32 @@ app = Dash(__name__)
 app.layout = html.Div(
     [
         html.H1("Pink Morsel Sales Dashboard"),
-        dcc.Dropdown(
-            id="region-filter", options=region_options, value="all", clearable=False
+        html.Div(
+            [
+                html.P("These controls only affect the first figure."),
+                html.Label("Region"),
+                dcc.Dropdown(
+                    id="region-filter",
+                    options=region_options,
+                    value="all",
+                    clearable=False,
+                    style={"width": "240px"},
+                ),
+            ],
+            style={"marginBottom": "16px"},
         ),
-        dcc.Dropdown(
-            id="time-filter", options=time_options, value="day", clearable=False
+        html.Div(
+            [
+                html.Label("Time Grouping"),
+                dcc.Dropdown(
+                    id="time-filter",
+                    options=time_options,
+                    value="day",
+                    clearable=False,
+                    style={"width": "240px"},
+                ),
+            ],
+            style={"marginBottom": "24px"},
         ),
         dcc.Graph(id="daily-sales-chart"),
         dcc.Graph(id="region-sales-chart"),
