@@ -43,7 +43,7 @@ app.layout = html.Div(
         html.H1("Pink Morsel Sales Dashboard"),
         html.Div(
             [
-                html.P("These controls only affect the first figure."),
+                html.P("Region affects both figures. Time grouping only affects the first figure."),
                 html.Label("Region"),
                 dcc.Dropdown(
                     id="region-filter",
